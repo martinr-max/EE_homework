@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;400&display=swap');
+
+//color variables
+$color-primary: #051544;
+$color-secondary: #1C3C16;
+$color-light-green: #7BF762; 
+$color-dark-green: #5A8F4F;
+$color-dark-violet: #8259e0;
+$color-light-blue: #22b0e0;
+
+//font variables
+$font-primary: 'Roboto Mono', monospace;
+
+// responsive design breakpoints in em
+$bp-largest: 75em;   // 1200px
+$bp-large: 62.5em;   // 1000px
+$bp-medium: 50em;    // 800px;
+$bp-small: 37.5em;    // 600px;
+$bp-smallest: 22.25em; //500px;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+        font-size: 44%;
+    }
+}
+
+body {
+    font-family: $font-primary;
+    background-color: $color-primary;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.main_container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.headline-2 {
+    color: $color-light-green;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: .8rem;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-color: $color-light-blue;
+        text-decoration-thickness: 2px;
+    }
+
+    @media only screen and (max-width:$bp-small) {
+        margin-left: 2rem;
+    }
+}
+
+p {
+    color: $color-dark-green;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-color: $color-dark-violet;
+        text-decoration-thickness: 2px;
+    }
+}
+
+.row {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    
+    @media only screen and (max-width:$bp-small) {
+        margin-right: 0;
+        justify-content: space-evenly;
+    }
+}
+
+#price {
+    font-size: 1.2rem;
+}
+
+//style of an element, which has the "active" classname
+
+#active {
+    border: 1px solid $color-light-green;
+    box-shadow: 0 1px 4px $color-dark-green, 0 1px 4px 2px $color-dark-green;
+    color: $color-light-green;
+
+    &:hover {
+        border: 1px solid $color-dark-violet;
+    }
+
+    p, h3, li {
+        color: $color-light-green;
+    }
+}
+

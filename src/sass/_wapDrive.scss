@@ -1,0 +1,13 @@
+@import './base';
+
+#Wap_Drive_row {
+    display: flex;
+    width: 69%;
+        justify-content: space-evenly;
+    
+    .WarpDriveTab {
+        @media only screen and (max-width:$bp-small) {
+            top: 0;
+        }
+    }
+}
